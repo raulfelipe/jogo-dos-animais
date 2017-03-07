@@ -57,7 +57,7 @@ public class JogoDosAnimais {
     }
 
     /**
-     * Verifica qual Anomal foi escolhido
+     * Verifica se animal vive na agua ou terra.
      * @param retorno
      */
     public void qualNatureza(Retorno retorno) {
