@@ -1,4 +1,6 @@
-package com.company.utils;
+package com.company.view;
+
+import com.company.controller.Retorno;
 
 import javax.swing.*;
 import java.awt.*;
@@ -21,24 +23,27 @@ public class OpcoesPainel {
      */
     public static void showDialog(TiposDialogo type, String message, Retorno retorno) {
 
+        String resposta = "";
+
         switch (type) {
 
             case MESSAGE: { //tipo mensagem
-                JOptionPane.showMessageDialog(component, message, Mensagens.TITULO, JOptionPane.INFORMATION_MESSAGE);
+                resposta = String.valueOf(JOptionPane.showConfirmDialog(component, message, Mensagens.TITULO, JOptionPane.DEFAULT_OPTION));
                 break;
             }
             case CONFIRM: { //tipo confirm
-                retorno.setRetorno(String.valueOf(JOptionPane.showConfirmDialog(component, message, Mensagens.TITULO,
-                        JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE)));
+                resposta = String.valueOf(JOptionPane.showConfirmDialog(component, message, Mensagens.TITULO,
+                        JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE));
                 break;
             }
             case INPUT: {//tipo de pergunta
-                //retorno.setRetorno(JOptionPane.showInputDialog(message));
-                retorno.setRetorno(JOptionPane.showInputDialog(component, message, Mensagens.TITULO, JOptionPane.PLAIN_MESSAGE));
+                resposta = JOptionPane.showInputDialog(component, message, Mensagens.TITULO, JOptionPane.PLAIN_MESSAGE);
                 break;
             }
 
         }
+
+        retorno.setValor(resposta != null ? resposta : "");
 
     }
 

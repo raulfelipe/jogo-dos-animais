@@ -1,4 +1,4 @@
-package com.company.utils;
+package com.company.controller;
 
 /**
  * @author Raul Felipe
@@ -8,21 +8,21 @@ package com.company.utils;
 public class Retorno {
 
     //Atributo
-    private String retorno;
+    private String valor;
 
     //Construtor
     public Retorno() {
-        this.retorno = "-1";
+        this.valor = "-1";
     }
 
     //Devolver Retorno
-    public String getRetorno() {
-        return retorno;
+    public String getValor() {
+        return valor;
     }
 
     //Alterar Retorno
-    public void setRetorno(String retorno) {
-        this.retorno = retorno;
+    public void setValor(String valor) {
+        this.valor = valor;
     }
 
 }
